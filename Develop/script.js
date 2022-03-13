@@ -56,12 +56,19 @@ function generatePassword() {
     specialChar === false && numberChar === false ||  lowerChar === false && numberChar === false && specialChar === false || lowerChar === false && upperChar === false && specialChar === false || 
     lowerChar === false && numberChar === false && upperChar === false && specialChar === false || specialChar === false && upperChar === false && numberChar === false);
   
+    if (numberChar) {passwordTotal=passwordTotal + (numberCharArray)};
 
+    if (upperChar) {passwordTotal=passwordTotal + (upperCharArray)};
+  
+    if (lowerChar) {passwordTotal=passwordTotal + (lowerCharArray)};
+  
+    if (specialChar) {passwordTotal=passwordTotal + (specialCharArray)};
+   
 
 
   for (var i = 0; i < passwordLength; i++) {
     var randomnumber = passwordTotal[Math.floor(Math.random()*passwordTotal.length)];
-    passwordArray = passwordArray & (randomnumber);
+    passwordArray = passwordArray + (randomnumber);
   }
 
   var password = passwordArray.join('');
