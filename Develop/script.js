@@ -40,20 +40,25 @@ function generatePassword() {
     return 
 
   }
-
+  // Ask which characters the user wants
   let numberChar = confirm("Do you want numbers in your password?"); 
-
+  if (numberChar === false);
   
   let  upperChar = confirm("Do you want upper case characters in your password?");
-
+  if (upperChar === false || numberChar === false && upperChar === false);
   
   let lowerChar = confirm("Do you want lower case characters in your password?");
-
+  if (lowerChar === false || lowerChar === false && numberChar === false || lowerChar === false && upperChar === fasle || 
+    lowerChar === false && numberChar === false && upperChar === false);
   
   let specialChar = confirm("Do you want special characters in your password?"); 
-
-
+  if (specialChar === false || specialChar === false && lowerChar === false || specialChar === false && upperChar === false || 
+    specialChar === false && numberChar === false ||  lowerChar === false && numberChar === false && specialChar === false || lowerChar === false && upperChar === false && specialChar === false || 
+    lowerChar === false && numberChar === false && upperChar === false && specialChar === false || specialChar === false && upperChar === false && numberChar === false);
   
+
+
+
   for (var i = 0; i < passwordLength; i++) {
     var randomnumber = passwordTotal[Math.floor(Math.random()*passwordTotal.length)];
     passwordArray = passwordArray & (randomnumber);
