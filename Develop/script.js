@@ -13,22 +13,37 @@ var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
-  // Ask four user Input
-  passwordLength = prompt("How many characters would you like in your password? Choose between 8 and 128");
-  console.log("Password length " + passwordLength);
+  // Ask for user Input
+  passwordLength = prompt("How many characters would you like in your password? Choose between 8 and 128")
   
-    if(passwordLength) {
-    alert("This field is required");
+    if(!passwordLength) {
+    alert("This field is required"); 
+    return
+    
   } if (passwordLength < 8 || passwordLength > 128) {
-    passwordLength = prompt("Your password must be between 8 and 128 characters");
-    console.log("Password length " + passwordLength);
-  }
+    passwordLength = alert("Your password must be between 8 and 128 characters"); 
+    return 
 
+  }
+  
+function determineanswers() {}
   // ask all the prompts
   let getNumber = confirm("Do you want numbers in your password?"); 
+  if(getNumber) {
+    numberChar
+  }
   let getUpperChar = confirm("Do you want upper case characters in your password?");
+  if(getUpperChar) {
+    upperChar
+  }
   let getLowerChar = confirm("Do you want lower case characters in your password?");
+  if(getLowerChar) {
+    lowerChar
+  }
   let getSpecialChar = confirm("Do you want special characters in your password?"); 
+  if(getSpecialChar) {
+    specialChar
+  }
 
   return {
     getNumber,
@@ -56,3 +71,5 @@ function writePassword() {
   
   passwordText.value = password;
 }
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
