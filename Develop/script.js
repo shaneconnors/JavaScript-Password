@@ -48,13 +48,12 @@ function generatePassword() {
   if (upperChar === false || numberChar === false && upperChar === false);
   
   let lowerChar = confirm("Do you want lower case characters in your password?");
-  if (lowerChar === false || lowerChar === false && numberChar === false || lowerChar === false && upperChar === fasle || 
-    lowerChar === false && numberChar === false && upperChar === false);
+  if (lowerChar === false || numberChar === false && lowerChar === false || upperChar === false && lowerChar === fasle || numberChar === false && upperChar === false && lowerChar === false);
   
   let specialChar = confirm("Do you want special characters in your password?"); 
-  if (specialChar === false || specialChar === false && lowerChar === false || specialChar === false && upperChar === false || 
-    specialChar === false && numberChar === false ||  lowerChar === false && numberChar === false && specialChar === false || lowerChar === false && upperChar === false && specialChar === false || 
-    lowerChar === false && numberChar === false && upperChar === false && specialChar === false || specialChar === false && upperChar === false && numberChar === false);
+  if (specialChar === false || lowerChar === false && specialChar === false || upperChar === false && specialChar === false || 
+    numberChar === false && specialChar === false || numberChar === false && lowerChar === false && specialChar === false || upperChar === false && lowerChar === false && specialChar === false || 
+    numberChar === false && upperChar === false && lowerChar === false && specialChar === false || numberChar === false && upperChar === false && specialChar === false);
   
     if (numberChar) {passwordTotal=passwordTotal + (numberCharArray)};
 
@@ -68,7 +67,7 @@ function generatePassword() {
 
   for (var i = 0; i < passwordLength; i++) {
     var randomnumber = passwordTotal[Math.floor(Math.random()*passwordTotal.length)];
-    passwordArray = passwordArray + (randomnumber);
+    passwordArray = passwordArray.concat (randomnumber);
   }
 
   var password = passwordArray.join('');
