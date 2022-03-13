@@ -23,7 +23,7 @@ var passwordLength;
 function getUserPreferences(params) {
   // ask all the prompts
   let getNumber = confirm("Do you want numbers in your password?"); 
-  let getUpperChar = confirm("Do you want upper case characters i[n your passwprd?");
+  let getUpperChar = confirm("Do you want upper case characters in your password?");
   let getLowerChar = confirm("Do you want lower case characters in your password?");
   let getSpecialChar = confirm("Do you want special characters in your password?"); 
 
@@ -37,14 +37,11 @@ function getUserPreferences(params) {
 
 let getUserChoices = getUserPreferences(); 
 console.log(getUserChoices)
-//let {getNumber, getSpecialChar} = getUserChoices; 
-if(getUserChoices.getNumber){
-  /// add number to the 
+if (getUserChoices.getNumber == true) { window.prompt (numberChar)
 }
-
-if (getSpecialChar) {
-  
+if (getUserChoices.getSpecialChar == true) { window.prompt (upperChar) 
 }
+if (getUserChoices.getLowerChar == true) { window.prompt (lowerChar)}
 
 
 // Write password to the #password input
