@@ -33,3 +33,6 @@ WHEN the password is generated
 
 THEN the password is either displayed in an alert or written to the page
 
+LINK TO GITHUB REPOSITORY https://github.com/shaneconnors/JavaScript-Password
+
+LINK TO DEPLOYED APPLICATION file:///C:/Users/shane/projects/javascript-password/Develop/index.html
