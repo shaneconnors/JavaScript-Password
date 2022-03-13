@@ -13,14 +13,28 @@ function randomPickChar(text, numberChars = 1) {
   return randomString;
 }
 
-var numberChar = "0123456789";
-var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lowerChar = "abcdefghijklmnopqrstuvwxyz";
+
+var numberChar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var specialChar = `!"#$%&'()*+,-./:;<=>?@[\]^_\`{|}~`;
 var passwordLength;
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
-function getUserPreferences(params) {
+function generatePassword() {
+  // Ask four user Input
+  passwordLength = prompt("How many characters would you like in your password? Choose between 8 and 128");
+  console.log("Password length " + passwordLength);
+  
+    if(!passwordLength) {
+    alert("This field is required");
+  } if (passwordLength < 8 || passwordLength > 128) {
+    passwordLength = prompt("Your password must be between 8 and 128 characters");
+    console.log("Password length " + passwordLength);
+  }
+
   // ask all the prompts
   let getNumber = confirm("Do you want numbers in your password?"); 
   let getUpperChar = confirm("Do you want upper case characters in your password?");
@@ -41,8 +55,10 @@ if (getUserChoices.getNumber == true) { window.prompt (numberChar)
 }
 if (getUserChoices.getSpecialChar == true) { window.prompt (upperChar) 
 }
-if (getUserChoices.getLowerChar == true) { window.prompt (lowerChar)}
-
+if (getUserChoices.getLowerChar == true) { window.prompt (lowerChar)
+}
+if (getUserChoices.getSpecialChar == true) { window.prompt (specialChar)
+}
 
 // Write password to the #password input
 function writePassword() {
@@ -51,8 +67,3 @@ function writePassword() {
   
   passwordText.value = password;
 }
-
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
